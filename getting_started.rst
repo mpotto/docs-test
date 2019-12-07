@@ -1,6 +1,6 @@
-===========================
-Getting started to *Sphinx*
-===========================
+=============================
+Getting started with *Sphinx*
+=============================
 
 I will be using *Sphinx* and *Read The Docs* to automatize
 documentation creation and to host the documentation pages.
