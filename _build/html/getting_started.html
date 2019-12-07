@@ -150,7 +150,7 @@
   <div class="section" id="getting-started-to-sphinx">
 <h1>Getting started to <em>Sphinx</em><a class="headerlink" href="#getting-started-to-sphinx" title="Permalink to this headline">¶</a></h1>
 <p>I will be using <em>Sphinx</em> and <em>Read The Docs</em> to automatize
-documentation creating and hosting the documentation pages.
+documentation creation and to host the documentation pages.
 The convention hereafter adopted will be that of numpy. To
 convert between numpydoc and the rst syntax I will be using
 the napoleon package.</p>
@@ -286,6 +286,118 @@ a BufferedRandom.</p>
 reading and writing. For strings StringIO can be used like a file
 opened in a text mode, and for bytes a BytesIO can be used like a file
 opened in a binary mode.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="xtalphases.data.preprocess.CIFParser">
+<em class="property">class </em><code class="sig-prename descclassname">xtalphases.data.preprocess.</code><code class="sig-name descname">CIFParser</code><span class="sig-paren">(</span><em class="sig-param">filename, cif_columns=['index_h', 'index_k', 'index_l', 'FOBS', 'SIGFOBS', 'UOBS', 'SIGUOBS', 'FC', 'PHI', 'FOM', 'RESOL', 'pdbx_r_free_flag']</em><span class="sig-paren">)</span><a class="headerlink" href="#xtalphases.data.preprocess.CIFParser" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="xtalphases.data.preprocess.CIFParser.get_pdb_name">
+<code class="sig-name descname">get_pdb_name</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#xtalphases.data.preprocess.CIFParser.get_pdb_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get PDB_ID of the file being parsed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>name</strong></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>PDB_ID of the file being parsed.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="xtalphases.data.preprocess.CIFParser.header_parse">
+<code class="sig-name descname">header_parse</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#xtalphases.data.preprocess.CIFParser.header_parse" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parse numeric and textual info on .cif header.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="xtalphases.data.preprocess.CIFParser.header_refln_df">
+<code class="sig-name descname">header_refln_df</code><span class="sig-paren">(</span><em class="sig-param">headercols=None</em>, <em class="sig-param">reflncols=None</em>, <em class="sig-param">phierror=False</em><span class="sig-paren">)</span><a class="headerlink" href="#xtalphases.data.preprocess.CIFParser.header_refln_df" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert header and reflection into a single DataFrame. Header
+and reflections columns can be specified via headercols and
+reflncols arguments.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>headercols</strong> (<em>header columns to be included in the final DataFrame.</em>) – </p></li>
+<li><p><strong>reflncols</strong> (<em>reflection columns to be included in the final DataFrame.</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>header_refln_df</strong></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>DataFrame containing both header and reflection info.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="xtalphases.data.preprocess.CIFParser.header_to_df">
+<code class="sig-name descname">header_to_df</code><span class="sig-paren">(</span><em class="sig-param">columns=None</em><span class="sig-paren">)</span><a class="headerlink" href="#xtalphases.data.preprocess.CIFParser.header_to_df" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert header dictionary to a pandas DataFrame.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><ul class="simple">
+<li><p><strong>cifheader_df</strong> (<em>pandas DataFrame containing all information</em>)</p></li>
+<li><p><em>stored on the header dictionary.</em></p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="xtalphases.data.preprocess.CIFParser.header_to_series">
+<code class="sig-name descname">header_to_series</code><span class="sig-paren">(</span><em class="sig-param">columns=None</em><span class="sig-paren">)</span><a class="headerlink" href="#xtalphases.data.preprocess.CIFParser.header_to_series" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert header dictionary to a pandas Series.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><ul class="simple">
+<li><p><strong>cifheader_series</strong> (<em>pandas Series containing all information</em>)</p></li>
+<li><p><em>stored on the header dictionary.</em></p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="xtalphases.data.preprocess.CIFParser.parse">
+<code class="sig-name descname">parse</code><span class="sig-paren">(</span><em class="sig-param">integer_indexes=['index_h', 'index_l', 'index_k', 'pdbx_r_free_flag']</em><span class="sig-paren">)</span><a class="headerlink" href="#xtalphases.data.preprocess.CIFParser.parse" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parse both header and reflections.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="xtalphases.data.preprocess.CIFParser.reflections_parse">
+<code class="sig-name descname">reflections_parse</code><span class="sig-paren">(</span><em class="sig-param">integer_columns=['index_h', 'index_l', 'index_k', 'pdbx_r_free_flag']</em><span class="sig-paren">)</span><a class="headerlink" href="#xtalphases.data.preprocess.CIFParser.reflections_parse" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parse reflections on .cif file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>integer_indexes</strong> (<em>reflection columns containing</em>) – </p></li>
+<li><p><strong>entries.</strong> (<em>integer</em>) – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="xtalphases.data.preprocess.CIFParser.reflections_to_df">
+<code class="sig-name descname">reflections_to_df</code><span class="sig-paren">(</span><em class="sig-param">columns=None</em><span class="sig-paren">)</span><a class="headerlink" href="#xtalphases.data.preprocess.CIFParser.reflections_to_df" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert reflection dictionary to a pandas DataFrame.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><ul class="simple">
+<li><p><strong>refln_df</strong> (<em>pandas DataFrame containing all information</em>)</p></li>
+<li><p><em>stored on the reflection dictionary.</em></p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
 </dd></dl>
 
 </div>
