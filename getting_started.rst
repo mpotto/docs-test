@@ -10,7 +10,4 @@ the napoleon package.
 
 .. math:: e^{i\pi} + 1 = 0
 
-.. autofunction:: io.open
-
-.. autoclass:: xtalphases.data.preprocess.CIFParser
-	:members:
+.. autofunction:: random_code.Grid._plot_grid
