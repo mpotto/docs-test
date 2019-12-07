@@ -26,6 +26,15 @@ class Grid():
 		You know, documentation is the kind of thing you never complain 
 		with. The more, the better [1]_.
 
+		.. math::
+		  e^{i\pi} + 1 = 0
+
+		Examples
+		--------
+		>>> print('Olá')
+		Olá
+
+
 		References
 		----------
 		.. [1] Random Person that wrote important things concerning
