@@ -21,11 +21,11 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script type="text/javascript" src="_static/jquery.js"></script>
-        <script type="text/javascript" src="_static/underscore.js"></script>
-        <script type="text/javascript" src="_static/doctools.js"></script>
-        <script type="text/javascript" src="_static/language_data.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -152,38 +152,25 @@ documentation creation and to host the documentation pages.
 The convention hereafter adopted will be that of numpy. To
 convert between numpydoc and the rst syntax I will be using
 the napoleon package.</p>
-<dl class="method">
-<dt id="random_code.Grid._plot_grid">
-<code class="sig-prename descclassname">Grid.</code><code class="sig-name descname">_plot_grid</code><span class="sig-paren">(</span><em class="sig-param">x_span</em>, <em class="sig-param">y_span</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/random_code.html#Grid._plot_grid"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#random_code.Grid._plot_grid" title="Permalink to this definition">¶</a></dt>
-<dd><p>Plot a random grid randomly generated in a random day by someone
-somewhat random.</p>
+<dl class="class">
+<dt id="random_code.NFWDisk">
+<em class="property">class </em><code class="sig-prename descclassname">random_code.</code><code class="sig-name descname">NFWDisk</code><span class="sig-paren">(</span><em class="sig-param">r_s=24.42</em>, <em class="sig-param">rho_s=0.184</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/random_code.html#NFWDisk"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#random_code.NFWDisk" title="Permalink to this definition">¶</a></dt>
+<dd><p>Navarro-Frenk-White (NFW) dark matter denstiy
+profile. See <a class="footnote-reference brackets" href="#id2" id="id1">1</a> for more information.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>x_span</strong> (<em>numpy array</em>) – Spanned values of x-axis (not randomly oriented).</p></li>
-<li><p><strong>y_span</strong> (<em>numpy array</em>) – Sppaned values of y-axis (this one can be random).</p></li>
+<li><p><strong>r_s</strong> (<em>float</em>) – Scale radius (kpc).</p></li>
+<li><p><strong>rho_s</strong> (<em>float</em>) – Scale density (GeV/cm³).</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p><strong>axes</strong> (<em>numpy array</em>) – The plot axes.</p>
-</dd>
 </dl>
-<p class="rubric">Notes</p>
-<p>Hope you don’t mind if I write too much on this documentation.
-You know, documentation is the kind of thing you never complain
-with. The more, the better <a class="footnote-reference brackets" href="#id2" id="id1">1</a>.</p>
 <div class="math notranslate nohighlight">
-\[e^{i\pi} + 1 = 0\]</div>
-<p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Olá&#39;</span><span class="p">)</span>
-<span class="go">Olá</span>
-</pre></div>
-</div>
+\[\rho_{\mathrm{NFW}}(r) = \dfrac{\rho_s}{\dfrac{r}{r_s} \left(1+\dfrac{r}{r_s} \right)^2}\]</div>
 <p class="rubric">References</p>
 <dl class="footnote brackets">
 <dt class="label" id="id2"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
-<dd><p>Random Person that wrote important things concerning
-documentation.</p>
+<dd><p>PPPC 4 DM ID: A Poor Particle Physicist Cookbook for Dark Matter Indirect Detection - Marco Cirelli <em>et al.</em></p>
 </dd>
 </dl>
 </dd></dl>

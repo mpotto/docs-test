@@ -8,4 +8,6 @@ The convention hereafter adopted will be that of numpy. To
 convert between numpydoc and the rst syntax I will be using
 the napoleon package.
 
-.. automethod:: random_code.Grid._plot_grid
+.. autoclass:: random_code.NFWDisk
+
+
